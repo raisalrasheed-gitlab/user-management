@@ -11,6 +11,9 @@ app.use(cors());
 app.use(express.json());
 const routes = require('./routes/v1/index');
 app.use(routes);
+app.use('*', () => {
+  res.status(404).json({ message: 'Page not found' });
+});
 
 port = process.env.PORT || 5000;
 app.listen(port, () => {
