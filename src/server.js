@@ -13,7 +13,7 @@ app.use(express.json());
 const routes = require('./routes/v1/index');
 
 app.use(routes);
-app.use('*', () => {
+app.use('*', (req, res) => {
   res.status(404).json({ message: 'Page not found' });
 });
 

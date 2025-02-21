@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-Mongo_Url = process.env.MONGO_URI;
+Mongo_Url = process.env.MONGO_URI || 'mongodb://0.0.0.0:27017/user-management';
 
 mongoose
   .connect(Mongo_Url)
