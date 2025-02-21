@@ -34,7 +34,7 @@ module.exports.editUser = async (req, res) => {
     const { id } = req.params;
     const { body } = req;
     const user = await User.findByIdAndUpdate(id, body);
-    res.status(200).json({ message: 'you selected user is update' });
+    res.status(200).json({ message: 'you selected user is updated' });
   } catch (error) {
     res.status(404).json({ message: error.messgae });
   }
