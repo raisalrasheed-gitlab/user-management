@@ -9,7 +9,9 @@ const db = require('../src/config/db');
 //middleware
 app.use(cors());
 app.use(express.json());
+
 const routes = require('./routes/v1/index');
+
 app.use(routes);
 app.use('*', () => {
   res.status(404).json({ message: 'Page not found' });
